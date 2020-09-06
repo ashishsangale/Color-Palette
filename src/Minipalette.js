@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = {
     root:{
         backgroundColor: 'white',
-        border: '2px solid black',
+        border: '1px solid black',
         borderRadius: '5px',
         padding: '0.5rem',
         position: 'relative',
@@ -14,16 +14,16 @@ const styles = {
         }
     },
     colors:{
-        backgroundColor: 'grey'
+        //backgroundColor: 'grey'
     },
     title:{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '0px',
+        margin: '0',
+        paddingTop: '0.5rem',
         fontSize: '1rem',
         position: 'relative',
-        paddingTop: '0.5rem'
     },
     emoji:{
         marginLeft: '0.5rem',
