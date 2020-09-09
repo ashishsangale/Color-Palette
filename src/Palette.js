@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ColorBox from './ColorBox';
 import './Palette.css';
 import Navbar from './Navbar'
+import Footer from './Footer';
 
 class Palette extends Component {
     constructor(props){
@@ -34,14 +35,11 @@ class Palette extends Component {
         ))
         return (
             <div className='Palette'>
-                <Navbar level={level} changeLevel={this.changeLevel} handleFormat={this.changeFormat}/>
+                <Navbar level={level} changeLevel={this.changeLevel} handleFormat={this.changeFormat} showSlider={true}/>
                 <div className='Palette-colors'>
                     {colorBoxes}
                 </div>
-                <footer className='footer'>
-                    {paletteName}
-                    <span className='emoji'>{emoji}</span>
-                </footer>
+                <Footer paletteName={paletteName} emoji={emoji}/>
             </div>
         )
     }
