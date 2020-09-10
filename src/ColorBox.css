@@ -64,6 +64,8 @@
     border: none;
     text-align: center;
     line-height: 30px;
+    text-decoration: none;
+    color: white;
 }
 
 .copy-overlay{
@@ -119,4 +121,12 @@
     font-weight: 300;
     text-shadow:1px 2px white;
     font-size: 2rem;
+}
+
+.light-text{
+    color: white;
+}
+
+.ColorBox .dark-text{
+    color: black;
 }
