@@ -17,14 +17,17 @@ export default {
         display: 'flex',
         width: '100%',
         justifyContent: 'space-between',
-        color: 'white'
-
+        color: 'white',
+        alignItems: 'center',
+        '& a': {
+            color: 'white'
+        }
     },
     palettes:{
         boxSizing: 'border-box',
         width: '100%',
         display: 'grid',
-        gridTemplateColumns: 'repeat(3,30%)',
+        gridTemplateColumns: 'repeat(3,33%)',
         gridGap: '5px'
     }
 }
