@@ -13,7 +13,7 @@ export default {
         height: '100%',
         display: 'flex',
         alignItems: 'center',
-        backgroundColor: 'cornsilk',
+        backgroundColor: '#282c34',
     },
     slider:{
         width: '350px',
@@ -42,6 +42,6 @@ export default {
     },
     a:{
         textDecoration: 'none',
-        color: 'black',
+        color: '#61dafb',
     }
 }
