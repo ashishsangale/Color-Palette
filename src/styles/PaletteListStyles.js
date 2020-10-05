@@ -18,10 +18,10 @@ export default {
         display: 'flex',
         width: '100%',
         justifyContent: 'space-between',
-        color: 'white',
+        color: '#61dafb',
         alignItems: 'center',
         '& a': {
-            color: 'white'
+            color: '#61dafb'
         }
     },
     palettes:{
