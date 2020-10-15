@@ -13,10 +13,12 @@ class FormDialog extends Component {
     constructor(props){
         super(props)
         this.state = {
-            open: true,
+            stage: 'form',
             newPaletteName: ''
         }
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+        this.showEmojiPicker = this.showEmojiPicker.bind(this);
+        this.addEmoji = this.addEmoji.bind(this);
     }
 
     componentDidMount(){
@@ -40,17 +42,35 @@ class FormDialog extends Component {
           [e.target.name] : e.target.value
         })
     }
+
+    showEmojiPicker(){
+        this.setState({
+            stage: 'emoji'
+        })
+    }
+
+    addEmoji(emoji){
+        const newPalette = {
+            paletteName: this.state.newPaletteName,
+            emoji: emoji.native
+        }
+        this.props.handleSubmit(newPalette)
+    }
 render(){
     const {newPaletteName} = this.state
     return (
-      <Dialog open={this.state.open} onClose={this.props.hideForm} aria-labelledby="form-dialog-title">
+        <div>
+        <Dialog open={this.state.stage === 'emoji'} onClose={this.props.hideForm}>
+            <DialogTitle id="form-dialog-title">Choose Palette Emoji</DialogTitle>
+            <Picker onSelect={this.addEmoji}/>
+        </Dialog>
+        <Dialog open={this.state.stage === 'form'} onClose={this.props.hideForm} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Save Palette</DialogTitle>
-        <ValidatorForm onSubmit={() => this.props.handleSubmit(newPaletteName)}>
+        <ValidatorForm onSubmit={this.showEmojiPicker}>
         <DialogContent>
           <DialogContentText>
             Please enter a name for your beautiful Palette. Make sure it's Unique!!! 
           </DialogContentText>
-          <Picker/>
                   <TextValidator 
                   value={newPaletteName} 
                   label='New Palette'
@@ -69,6 +89,7 @@ render(){
         </DialogActions>
         </ValidatorForm>
       </Dialog>
+      </div>
   );
 }
 }
