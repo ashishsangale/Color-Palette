@@ -24,6 +24,7 @@ const styles = theme => ({
         }),
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
         height: '64px'
       },
       appBarShift: {
@@ -40,6 +41,15 @@ const styles = theme => ({
       },
       hide: {
         display: "none"
+      },
+      navBtn: {
+        marginRight: '1rem',
+        '& a': {
+          textDecoration: 'none'
+        }
+      },
+      button: {
+        margin: '0 0.5rem'
       }
 })
 
@@ -47,9 +57,11 @@ class PaletteFormNav extends Component {
     constructor(props){
         super(props)
         this.state ={
-            newPaletteName: ''
+            newPaletteName: '',
+            isFormOpen: false
         }
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+        this.showForm = this.showForm.bind(this);
     }
 
     handleChange(e){
@@ -58,6 +70,11 @@ class PaletteFormNav extends Component {
         })
     }
 
+    showForm(){
+      this.setState({
+        isFormOpen: true
+      })
+    }
     render() {
         const {classes, open, palette, handleSubmit} = this.props
         // const {newPaletteName} = this.state
@@ -85,12 +102,17 @@ class PaletteFormNav extends Component {
                 </Typography>
             </Toolbar>
             <div className={classes.navBtn}>
-                  <FormDialog palette={palette} handleSubmit={handleSubmit}/>
                   <Link to='/'>
-                      <Button variant='contained' color='secondary'>GO Back</Button>
+                      <Button variant='contained' color='secondary' className={classes.button}>GO Back</Button>
                   </Link>
+                  <Button variant="contained" color="primary" onClick={this.showForm} className={classes.button}>
+                    Save Palette 
+                  </Button>
                 </div>
             </AppBar>
+            {this.state.isFormOpen && (
+              <FormDialog palette={palette} handleSubmit={handleSubmit}/>
+            )}
             </div>
         )
     }
