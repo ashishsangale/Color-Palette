@@ -1,11 +1,11 @@
 const styles ={
     picker:{
-        width: '100% !important',          //over-rule parent styles
+        width: '100%',          //over-rule parent styles
         marginTop: '2rem'
     },
     addColor: {
         width: '100%',
-        padding: '0.7rem',
+        padding: '1rem',
         marginTop: '1rem',
         fontSize: '2rem'
     },

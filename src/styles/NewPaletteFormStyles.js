@@ -4,20 +4,6 @@ const styles = theme => ({
   root: {
     display: "flex"
   },
-  appBar: {
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    })
-  },
   menuButton: {
     marginLeft: 12,
     marginRight: 20
@@ -27,7 +13,8 @@ const styles = theme => ({
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0
+    flexShrink: 0,
+    height: '100vh'
   },
   drawerPaper: {
     width: drawerWidth,
@@ -45,7 +32,7 @@ const styles = theme => ({
   content: {
     height: 'calc(100vh - 64px)',
     flexGrow: 1,
-    padding: '0px',
+    padding: 0,
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
