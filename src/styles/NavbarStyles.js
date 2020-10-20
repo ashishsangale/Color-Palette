@@ -1,4 +1,4 @@
-
+import sizes from "./Sizes";
 export default {
     Navbar:{
         display: 'flex',
@@ -14,6 +14,9 @@ export default {
         display: 'flex',
         alignItems: 'center',
         backgroundColor: '#282c34',
+        [sizes.down("xs")]: {
+          display: "none"
+        }
     },
     slider:{
         width: '350px',
@@ -34,7 +37,10 @@ export default {
             border: '2px solid greenyellow',
             marginLeft: '-4px',
             marginTop: '-4px',
-        } 
+        },
+        [sizes.down("md")]: {
+          width: "150px"
+        }	    
     },
     select:{
         marginLeft: 'auto',
