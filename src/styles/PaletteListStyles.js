@@ -1,7 +1,10 @@
 import sizes from './Sizes';
+import background from './background.svg'
 export default {
     root:{
-        backgroundColor: '#282c34',
+        backgroundColor: '#000000',
+        /* background by SVGBackgrounds.com */
+        backgroundImage: `url(${background})`,
         height: '100vh',
         display: 'flex',
         alignItems: 'flex-start',
