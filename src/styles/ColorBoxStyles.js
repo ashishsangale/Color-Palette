@@ -14,7 +14,7 @@ export default {
         },
         [sizes.down('lg')]:{
             width: '25%',
-            height: props => (props.fullPalette)? '20%': '50%'
+            height: props => (props.fullPalette)? '20%': '33.3333%'
         },
         [sizes.down('md')]:{
             width: '50%',
@@ -22,7 +22,7 @@ export default {
         },
         [sizes.down('xs')]:{
             width: '100%',
-            height: props => (props.fullPalette)? '5%': '50%'
+            height: props => (props.fullPalette)? '5%': '10%'
         }
     },
     copyText: {
@@ -108,7 +108,10 @@ export default {
             textAlign: "center",
             marginBottom: "0",
             padding: "1rem",
-            textTransform: "uppercase"
+            textTransform: "uppercase",
+            [sizes.down("xs")]: {
+                fontSize: "6rem"
+              }
           },
           "& p": {
             fontSize: "2rem",
