@@ -57,10 +57,11 @@ class ColorPicker extends Component {
 
     render() {
         const {isPaletteFull, classes} = this.props
+        const {currentColor, newColorName} = this.state
         return (
             <div>
                 <ChromePicker
-                color={this.state.currentColor}
+                color={currentColor}
                 onChangeComplete={this.updateCurrentColor}
                 className={classes.picker}
                 />
@@ -70,12 +71,12 @@ class ColorPicker extends Component {
                 variant='filled'
                 margin='normal'
                 placeholder="Color name"
-                value={this.state.newColorName} 
+                value={newColorName} 
                 name='newColorName'
                 onChange={this.handleChange}
                 validators={['required', 'isColorNameUnique', 'isColorUnique']}
                 errorMessages={['this field is required', 'Color Name already taken', 'Color already taken']}/>
-                <Button variant='contained' color='primary' style={{background: isPaletteFull ? 'grey': this.state.currentColor}} type='submit' disabled={isPaletteFull}
+                <Button variant='contained' color='primary' style={{background: isPaletteFull ? 'grey': currentColor}} type='submit' disabled={isPaletteFull}
                 className={classes.addColor}>
                 {isPaletteFull ? 'Palette Full' : 'Add Color'}
                 </Button>

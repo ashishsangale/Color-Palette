@@ -131,7 +131,7 @@ class NewPaletteForm extends Component {
               Random Color
             </Button>
           </div>
-          <ColorPicker isPaletteFull={isPaletteFull} addNewColor={this.addNewColor} colors={this.state.colors}/>
+          <ColorPicker isPaletteFull={isPaletteFull} addNewColor={this.addNewColor} colors={colors}/>
           </div>
         </Drawer>
         <main
@@ -141,7 +141,7 @@ class NewPaletteForm extends Component {
         >
           <div className={classes.drawerHeader} />
           <DraggableColorList 
-          colors={this.state.colors} 
+          colors={colors} 
           removeColor={this.removeColor} 
           axis='xy'
           onSortEnd={this.onSortEnd}

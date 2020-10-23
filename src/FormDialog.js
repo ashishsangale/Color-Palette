@@ -60,14 +60,15 @@ class FormDialog extends Component {
         })
     }
 render(){
-    const {newPaletteName} = this.state
+    const {newPaletteName, stage} = this.state
+    const { hideForm } = this.props
     return (
         <div>
-        <Dialog open={this.state.stage === 'emoji'} onClose={this.props.hideForm}>
+        <Dialog open={stage === 'emoji'} onClose={hideForm}>
             <DialogTitle id="form-dialog-title">Choose Palette Emoji</DialogTitle>
             <Picker onSelect={this.addEmoji}/>
         </Dialog>
-        <Dialog open={this.state.stage === 'form'} onClose={this.props.hideForm} aria-labelledby="form-dialog-title">
+        <Dialog open={stage === 'form'} onClose={hideForm} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Save Palette</DialogTitle>
         <ValidatorForm onSubmit={this.showEmojiPicker}>
         <DialogContent>
@@ -85,7 +86,7 @@ render(){
                   onChange={this.handleChange}/>
         </DialogContent>
         <DialogActions>
-          <Button color="primary" onClick={this.props.hideForm}>
+          <Button color="primary" onClick={hideForm}>
             Cancel
           </Button>
           <Button variant='contained' color='primary' type='submit'>Save Palette</Button>
