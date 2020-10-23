@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 import React, { Component } from "react";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
