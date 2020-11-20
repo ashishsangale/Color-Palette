@@ -4,13 +4,6 @@ const styles = theme => ({
   root: {
     display: "flex"
   },
-  menuButton: {
-    marginLeft: 12,
-    marginRight: 20
-  },
-  hide: {
-    display: "none"
-  },
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
@@ -26,7 +19,7 @@ const styles = theme => ({
     alignItems: "center",
     padding: "0 8px",
     ...theme.mixins.toolbar,
-    width: '100%',
+    width: '95%',
     justifyContent: "flex-end"
   },
   content: {
@@ -58,7 +51,8 @@ const styles = theme => ({
     width: '100%'
   },
   button:{
-    width: '50%'
+    width: '95%',
+    marginTop: '5px'
   }
 });
 
